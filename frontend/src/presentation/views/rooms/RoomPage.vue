@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header class="ion-no-border">
       <ion-toolbar>
-        <ion-title>Mis Salas</ion-title>
+        <ion-title class="header-principal ion-text-center">Mis Salas</ion-title>
 
         <ion-buttons slot="end">
           <ion-fab-button size="small">
@@ -34,9 +34,6 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonCard,
-  IonCardContent,
-  IonFab,
   IonFabButton,
   IonIcon,
 } from "@ionic/vue";

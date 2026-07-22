@@ -2,7 +2,7 @@
   <ion-page>
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title>MobiBot</ion-title>
+      <ion-title class="header-principal ion-text-center">MobiBot</ion-title>
     </ion-toolbar>
   </ion-header>
 

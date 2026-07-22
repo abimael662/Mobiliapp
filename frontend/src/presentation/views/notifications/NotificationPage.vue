@@ -2,7 +2,7 @@
   <ion-page>
     <ion-header class="ion-no-border">
       <ion-toolbar>
-        <ion-title>Notificaciones</ion-title>
+        <ion-title class="header-principal ion-text-center">Notificaciones</ion-title>
       </ion-toolbar>
     </ion-header>
 
@@ -20,7 +20,7 @@
     </ion-content>
 
     <ion-footer class="ion-no-border">
-      <ion-toolbar class="ion-padding-horizontal">
+      <ion-toolbar class="ion-padding-horizontal ion-padding-vertical">
         <ion-button expand="block" fill="outline">
           Marcar todas como leídas
         </ion-button>
@@ -36,8 +36,6 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonCard,
-  IonCardContent,
   IonFooter,
   IonButton,
 } from "@ionic/vue";

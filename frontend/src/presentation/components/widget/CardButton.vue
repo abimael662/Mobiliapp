@@ -24,7 +24,7 @@ defineProps({
 
 <style scoped>
 .custom-card {
-  height: 140px;
+  height: 110px;
   margin: 8px;
 }
 
@@ -38,7 +38,7 @@ defineProps({
 
 .card-icon {
   font-size: 48px;
-  margin-bottom: 8px;
+  margin-bottom: 8px;  
 }
 
 h2 {

@@ -2,12 +2,12 @@
   <ion-page>
     <ion-header class="ion-no-border">
       <ion-toolbar>
-        <ion-title>Hola Jorge</ion-title>
+        <ion-title class="header-principal">Hola Jorge</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content class="ion-padding">
-      <h4>¿Qué deseas hacer hoy?</h4>
+      <p class="pregunta">¿Qué deseas hacer hoy?</p>
 
       <ion-grid>
         <ion-row>
@@ -37,7 +37,7 @@
         </ion-row>
       </ion-grid>
 
-      <h3>Actividad reciente</h3>
+      <h3 class="sub-tiulos">Actividad reciente</h3>
 
       <CardInfo
         imagen="https://docs-demo.ionic.io/assets/madison.jpg"
@@ -58,8 +58,6 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonCard,
-  IonCardContent,
 } from "@ionic/vue";
 
 import CardButton from "@/presentation/components/widget/CardButton.vue";

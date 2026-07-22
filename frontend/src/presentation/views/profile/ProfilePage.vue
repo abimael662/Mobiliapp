@@ -20,7 +20,7 @@
           <ion-icon slot="start" :icon="personOutline" />Información Personal </ion-item>
 
         <ion-item button lines="none">
-          <ion-icon slot="start" :icon="lockClosedOutline" />Seguridad </ion-item>
+          <ion-icon slot="start" :icon="shieldOutline" />Seguridad </ion-item>
 
         <ion-item button lines="none">
           <ion-icon slot="start" :icon="settingsOutline" />Preferencias</ion-item>
@@ -34,8 +34,8 @@
 
     </ion-content>
 
-    <ion-footer>
-      <ion-toolbar class="ion-padding-horizontal">
+    <ion-footer class="ion-no-border">
+      <ion-toolbar class="ion-padding-horizontal ion-padding-vertical">
         <ion-button expand="block" fill="outline"> Cerrar Sesión </ion-button>
       </ion-toolbar>
     </ion-footer>
@@ -47,7 +47,6 @@
 import {
   IonPage,
   IonContent,
-  IonCard,
   IonList,
   IonItem,
   IonIcon,
@@ -58,8 +57,8 @@ import {
 
 import {
   cameraOutline,
+  shieldOutline,
   personOutline,
-  lockClosedOutline,
   settingsOutline,
   printOutline,
   informationCircleOutline,
