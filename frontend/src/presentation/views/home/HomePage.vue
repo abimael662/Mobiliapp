@@ -1,29 +1,54 @@
 <template>
-<ion-page>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Hola Jorge</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Hola Jorge</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-  <ion-content class="ion-padding">
-    <h4>¿Qué deseas hacer hoy?</h4>
+    <ion-content class="ion-padding">
+      <h4>¿Qué deseas hacer hoy?</h4>
 
-    <ion-card>
-      <ion-card-content>
-        Parte de las opciones
-      </ion-card-content>
-    </ion-card>
+      <ion-grid>
+        <ion-row>
+          <CardButton
+            enlace="/tabs/furniture"
+            icono="chair"
+            titulo="Mis Mobiliarios"
+          />
 
-    <h3>Actividad reciente</h3>
+          <CardButton
+            enlace="/tabs/rooms"
+            icono="auto_awesome_mosaic"
+            titulo="Craer Sala"
+          />
 
-    <ion-card>
-      <ion-card-content>
-        Actividades recientes
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
-</ion-page>
+          <CardButton
+            enlace="/tabs/profile"
+            icono="barcode_reader"
+            titulo="Escanear QR"
+          />
+
+          <CardButton
+            enlace="/tabs/profile"
+            icono="qr_code_scanner"
+            titulo="QRs Generados"
+          />
+        </ion-row>
+      </ion-grid>
+
+      <h3>Actividad reciente</h3>
+
+      <CardInfo
+        imagen="https://docs-demo.ionic.io/assets/madison.jpg"
+        descripcion="Sala creada"
+        titulo="Sala Principal"
+        sala="Activa"
+        :hora="2"
+        enlace="/tabs/rooms/:id"
+      />
+    </ion-content>
+  </ion-page>
 </template>
 
 <script setup lang="ts">
@@ -34,6 +59,9 @@ import {
   IonTitle,
   IonContent,
   IonCard,
-  IonCardContent
-} from '@ionic/vue';
+  IonCardContent,
+} from "@ionic/vue";
+
+import CardButton from "@/presentation/components/widget/CardButton.vue";
+import CardInfo from "@/presentation/components/widget/CardInfo.vue";
 </script>
