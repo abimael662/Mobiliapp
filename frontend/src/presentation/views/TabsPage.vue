@@ -18,7 +18,7 @@
           <ion-label>Mas</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="room" href="/tabs/room">
+        <ion-tab-button tab="room" href="/tabs/rooms">
           <ion-icon aria-hidden="true" :icon="ellipse" />
           <ion-label>Sala</ion-label>
         </ion-tab-button>

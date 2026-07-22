@@ -1,6 +1,6 @@
 <template>
   <ion-page>
-  <ion-header>
+  <ion-header class="ion-no-border">
     <ion-toolbar>
       <ion-title>MobiBot</ion-title>
     </ion-toolbar>
@@ -8,11 +8,15 @@
 
   <ion-content class="ion-padding">
     <ion-searchbar placeholder="Buscar Chat..."></ion-searchbar>
-    <ion-card>
-      <ion-card-content>
-        Chats
-      </ion-card-content>
-    </ion-card>
+
+    <CardInfo
+        imagen="https://docs-demo.ionic.io/assets/madison.jpg"
+        descripcion="Sala creada"
+        titulo="Nombre Chat"
+        sala="Ultimo men..."
+        :hora="2"
+        enlace="/tabs/rooms/:id"
+      />
 
      <ion-fab slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button>
@@ -36,5 +40,8 @@ import {
   IonFabButton, 
   IonIcon 
 } from '@ionic/vue';
-  import { add } from 'ionicons/icons';
+
+import { add } from 'ionicons/icons';
+  
+import CardInfo from "@/presentation/components/widget/CardInfo.vue";
 </script>
