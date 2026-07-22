@@ -13,7 +13,7 @@
           <ion-label>Notificaciones</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="more" href="/tabs/more">
+        <ion-tab-button tab="chat" href="/tabs/chat">
           <ion-icon aria-hidden="true" :icon="square" />
           <ion-label>Mas</ion-label>
         </ion-tab-button>
