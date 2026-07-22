@@ -1,27 +1,30 @@
 <template>
   <ion-page>
-<ion-header>
-  <ion-toolbar>
+    <ion-header class="ion-no-border">
+      <ion-toolbar>
+        <ion-title>Mis Salas</ion-title>
 
-    <ion-title>Mis Salas</ion-title>
+        <ion-buttons slot="end">
+          <ion-fab-button size="small">
+            <ion-icon :icon="add"></ion-icon>
+          </ion-fab-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
 
-    <ion-buttons slot="end">
-      <ion-fab-button size="small">
-        <ion-icon :icon="add"></ion-icon>
-      </ion-fab-button>
-    </ion-buttons>
+    <ion-content class="ion-padding">
 
-  </ion-toolbar>
-</ion-header>
-
-  <ion-content class="ion-padding">
-    <ion-card>
-      <ion-card-content>
-        Salas
-      </ion-card-content>
-    </ion-card>
-  </ion-content>
-</ion-page>
+      <CardInfo
+        imagen="https://docs-demo.ionic.io/assets/madison.jpg"
+        descripcion="Sala creada"
+        titulo="Nombre Chat"
+        sala="Ultimo men..."
+        :hora="2"
+        enlace="/tabs/rooms/:id"
+      />
+      
+    </ion-content>
+  </ion-page>
 </template>
 
 <script setup lang="ts">
@@ -33,10 +36,11 @@ import {
   IonContent,
   IonCard,
   IonCardContent,
-  IonFab, 
-  IonFabButton, 
-  IonIcon 
-} from '@ionic/vue';
-  import { add } from 'ionicons/icons';
->>>>>>> feature/pages
+  IonFab,
+  IonFabButton,
+  IonIcon,
+} from "@ionic/vue";
+import { add } from "ionicons/icons";
+
+import CardInfo from "@/presentation/components/widget/CardInfo.vue";
 </script>
