@@ -1,2 +1,13 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+ion-content {
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+}
+
+ion-toolbar {
+  --padding-start: 20px;
+  --padding-end: 10px;
+}
