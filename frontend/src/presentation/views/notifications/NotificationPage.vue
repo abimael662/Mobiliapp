@@ -2,22 +2,36 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Tab 2</ion-title>
+        <ion-title>Notificaciones</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Tab 2</ion-title>
-        </ion-toolbar>
-      </ion-header>
 
-      <ExploreContainer name="Tab 2 page" />
+    <ion-content class="ion-padding">
+      <ion-card>
+        <ion-card-content> Notificaciones </ion-card-content>
+      </ion-card>
     </ion-content>
+
+    <ion-footer>
+      <ion-toolbar class="ion-padding-horizontal">
+        <ion-button expand="block" fill="outline">
+          Marcar todas como leídas
+        </ion-button>
+      </ion-toolbar>
+    </ion-footer>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/presentation/components/ExploreContainer.vue';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonCard,
+  IonCardContent,
+  IonFooter,
+  IonButton,
+} from "@ionic/vue";
 </script>
