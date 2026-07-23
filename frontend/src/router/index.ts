@@ -24,11 +24,12 @@ const routes: Array<RouteRecordRaw> = [
       ...homeRoutes,
       ...notificationRoutes,
       ...chatRoutes,
-      ...furnitureRoutes,
       ...roomRoutes,
       ...profileRoutes,
     ]
-  }
+  },
+  ...furnitureRoutes
+  // ...furnitureRoutes,
 ]
 
 const router = createRouter({

@@ -7,12 +7,7 @@
         </ion-col>
 
         <ion-col size="12">
-          <ion-input
-            :type="tipo"
-            :value="dato"
-            fill="outline"
-            placeholder="Ingrese el nombre"
-          />
+          <ion-input :type="tipo" :value="dato" fill="outline" placeholder="Ingrese el nombre" />
         </ion-col>
       </ion-row>
     </ion-grid>

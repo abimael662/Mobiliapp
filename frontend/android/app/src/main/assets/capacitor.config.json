@@ -1,8 +1,5 @@
 {
 	"appId": "io.ionic.starter",
 	"appName": "mobili-app",
-	"webDir": "dist",
-	"server": {
-		"url": "http://192.168.11.108:8100"
-	}
+	"webDir": "dist"
 }

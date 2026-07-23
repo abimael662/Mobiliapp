@@ -12,7 +12,7 @@
       <ion-grid>
         <ion-row>
           <CardButton
-            enlace="/tabs/furniture"
+            enlace="/furniture"
             icono="chair"
             titulo="Mis Mobiliarios"
           />
@@ -47,6 +47,7 @@
         :hora="2"
         enlace="/tabs/rooms/:id"
       />
+      
     </ion-content>
   </ion-page>
 </template>
