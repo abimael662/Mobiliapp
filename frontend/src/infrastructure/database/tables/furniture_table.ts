@@ -1,3 +1,5 @@
+// ../infrastructure/databes/tables/furniture_table.ts
+
 export const furnitureTable = `
 CREATE TABLE IF NOT EXISTS mobiliario (
     id_mobiliario INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -7,9 +9,10 @@ CREATE TABLE IF NOT EXISTS mobiliario (
     estado TEXT NOT NULL,
     fecha_compra DATETIME,
     descripcion TEXT,
-    codigo_qr INTEGER,
-    FOREIGN KEY (codigo_qr) REFERENCES codigo_qr(id_codigo_qr)
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP
 );
 `;
+
+// codigo_qr INTEGER,
+//     FOREIGN KEY (codigo_qr) REFERENCES codigo_qr(id_codigo_qr),

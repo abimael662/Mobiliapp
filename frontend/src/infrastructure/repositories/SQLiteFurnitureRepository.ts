@@ -1,3 +1,5 @@
+// ../infrastructure/repositories/SQLiteFurnitureRepository.ts
+
 import { Furniture } from "@/domain/entities/Furniture";
 import { FurnitureRepository } from "@/domain/repositories/FurnitureRepository";
 import { createDatabase } from "../database/sqlite";
@@ -31,8 +33,8 @@ export class SQLiteFurnitureRepository implements FurnitureRepository {
 
     await db.run(
       `INSERT INTO mobiliario
-      (nombre_mobiliario,categoria,ubicacion,estado,fecha_compra,descripcion,codigo_qr)
-      VALUES(?,?,?,?,?,?,?,?)`,
+      (nombre_mobiliario,categoria,ubicacion,estado,fecha_compra,descripcion)
+      VALUES(?,?,?,?,?,?)`,
       [
         furniture.nombre_mobiliario,
         furniture.categoria,
@@ -40,7 +42,6 @@ export class SQLiteFurnitureRepository implements FurnitureRepository {
         furniture.estado,
         furniture.fechaCompra,
         furniture.descripcion,
-        furniture.codigoQr,
       ],
     );
   }

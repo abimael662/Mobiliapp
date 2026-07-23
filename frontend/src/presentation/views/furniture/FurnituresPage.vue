@@ -30,20 +30,28 @@
     </ion-grid>
 
        <CardInfo
-        imagen="https://docs-demo.ionic.io/assets/madison.jpg"
-        descripcion="Sala creada"
-        titulo="Sala Principal"
-        indicador="Inidcador"
-        sala="Nombre de la Sala"
-        enlace="/furniture/:id"
-      />
+  v-for="furniture in furnitures"
+  :key="furniture.id_mobiliario"
+
+  imagen="https://docs-demo.ionic.io/assets/madison.jpg"
+
+  :titulo="furniture.nombre_mobiliario"
+
+  :descripcion="furniture.descripcion"
+
+  :indicador="furniture.estado"
+
+  :sala="furniture.ubicacion"
+
+  :enlace="`/furniture/${furniture.id_mobiliario}`"
+/>
 
       <ion-fab slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button>
         <ion-icon :icon="chevronUpCircle"></ion-icon>
       </ion-fab-button>
       <ion-fab-list side="top">
-        <ion-fab-button>
+        <ion-fab-button :router-link="'/furniture/new'">
           <ion-icon :icon="add"></ion-icon>
         </ion-fab-button>
       </ion-fab-list>
@@ -68,6 +76,27 @@ import {
 } from '@ionic/vue';
 
 import { qrCode, filter, chevronUpCircle, add } from "ionicons/icons";
+import { ref, onMounted } from "vue";
+import { onIonViewWillEnter } from "@ionic/vue";
 import CardInfo from "@/presentation/components/widget/CardInfo.vue";
-import { C } from 'vue-router/dist/router-CWoNjPRp.mjs';
+import { SQLiteFurnitureRepository } from "@/infrastructure/repositories/SQLiteFurnitureRepository";
+
+import { Furniture } from "@/domain/entities/Furniture";
+
+const furnitures = ref<Furniture[]>([]);
+
+
+const loadFurniture = async()=>{
+
+  const repository = new SQLiteFurnitureRepository();
+
+  furnitures.value = await repository.getAll();
+
+};
+
+
+onIonViewWillEnter(()=>{
+  loadFurniture();
+});
+
 </script>

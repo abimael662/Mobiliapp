@@ -100,13 +100,13 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="6">
-            <ion-button href="/furniture/new" expand="block" fill="outline" size="large">
+            <ion-button :router-link="`/furniture/${id}/edit`" expand="block" fill="outline">
               Editar
             </ion-button>
           </ion-col>
 
           <ion-col size="6" class="ion-text-end">
-            <ion-button expand="block" fill="solid" size="large">
+            <ion-button expand="block" fill="solid" >
               Eliminar
             </ion-button>
           </ion-col>
@@ -118,5 +118,10 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent, IonButton, IonButtons, IonBackButton } from '@ionic/vue';
+import { useRoute } from "vue-router";
+
+const route = useRoute();
+
+const id = route.params.id;
 </script>

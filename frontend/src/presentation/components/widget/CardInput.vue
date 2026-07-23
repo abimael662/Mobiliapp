@@ -7,7 +7,7 @@
         </ion-col>
 
         <ion-col size="12">
-          <ion-input :type="tipo" :value="dato" fill="outline" placeholder="Ingrese el nombre" />
+          <ion-input :type="tipo" v-model="valor" fill="outline" placeholder="Ingrese el nombre" />
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -23,6 +23,7 @@ import {
   IonLabel,
   IonInput,
 } from "@ionic/vue";
+import { computed } from "vue";
 import type { TextFieldTypes } from "@ionic/core";
 
 interface Props {
@@ -31,5 +32,19 @@ interface Props {
   dato?: string;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
+
+const emit = defineEmits<{
+  (e:"update:dato", value:string):void
+}>()
+
+
+const valor = computed<string>({
+  get(){
+    return props.dato ?? "";
+  },
+  set(value){
+    emit("update:dato", value);
+  }
+});
 </script>

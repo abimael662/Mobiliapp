@@ -1,3 +1,5 @@
+// ../domain/repositories/FurnitureRepository.ts
+
 import { Furniture } from "../entities/Furniture";
 
 export interface FurnitureRepository {
