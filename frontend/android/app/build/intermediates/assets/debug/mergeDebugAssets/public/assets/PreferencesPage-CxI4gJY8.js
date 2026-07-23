@@ -1,0 +1,1 @@
+import{d as t,c as o,w as a,u as n,I as s,a as r,f as c,k as u,o as d}from"./index-BLJLO-C8.js";const p=t({__name:"PreferencesPage",setup(f){return(i,e)=>(d(),o(n(s),null,{default:a(()=>[r(n(u),{class:"ion-padding"},{default:a(()=>[...e[0]||(e[0]=[c(" Página en construcción ",-1)])]),_:1})]),_:1}))}});export{p as default};
