@@ -69,17 +69,22 @@
 </template>
 
 <script setup lang="ts">
-import { IonPage, IonContent, IonButtons, IonBackButton, IonToast } from '@ionic/vue';
+import {
+  IonPage,
+  IonContent,
+  IonButtons,
+  IonBackButton,
+  IonToast
+} from '@ionic/vue';
 import { cameraOutline } from 'ionicons/icons';
 import CardInput from "@/presentation/components/widget/CardInput.vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
-import { CreateFurniture } from "@/domain/uses-case/Furniture/CreateFurniture";
-import { SQLiteFurnitureRepository } from "@/infrastructure/repositories/SQLiteFurnitureRepository";
 import type { Furniture } from "@/domain/entities/Furniture";
-import { useRouter } from "vue-router";
+import { furnitureService } from "@/infrastructure/container/dependencies";
 
 const router = useRouter();
+const route = useRoute();
 
 const nombre = ref("");
 const categoria = ref("");
@@ -87,28 +92,15 @@ const ubicacion = ref("");
 const estado = ref("");
 const fechaCompra = ref("");
 const descripcion = ref("");
-
 const showToast = ref(false);
 const toastMessage = ref("");
-
-const route = useRoute();
-
 const isEdit = route.params.id !== undefined;
 
-const title = isEdit
-  ? "Editar Mobiliario"
-  : "Crear Mobiliario";
-
-const opcion = isEdit
-  ? "Cambiar Foto"
-  : "Seleccionar Foto";
+const title = isEdit ? "Editar Mobiliario" : "Crear Mobiliario";
+const opcion = isEdit ? "Cambiar Foto" : "Seleccionar Foto";
 
 const guardar = async () => {
-
   try {
-
-    console.log("BOTÓN PRESIONADO");
-
     const furniture: Furniture = {
       nombre_mobiliario: nombre.value,
       categoria: categoria.value,
@@ -117,28 +109,20 @@ const guardar = async () => {
       fechaCompra: new Date(fechaCompra.value),
       descripcion: descripcion.value
     };
-
-
-    const repository = new SQLiteFurnitureRepository();
-
-    const useCase = new CreateFurniture(repository);
-
-
-    await useCase.execute(furniture);
+    await furnitureService.create(furniture);
 
     toastMessage.value = "Mobiliario guardado correctamente";
     showToast.value = true;
 
     setTimeout(() => {
       router.back();
-    }, 1000);
-
+    }, 500);
 
   } catch (error) {
 
     console.error(error);
 
-    toastMessage.value = `Error al guardar mobiliario ${error}`;
+    toastMessage.value = `Error al guardar mobiliario: ${error}`;
     showToast.value = true;
 
   }

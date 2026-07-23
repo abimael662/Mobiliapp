@@ -5,6 +5,7 @@ import { FurnitureRepository } from "@/domain/repositories/FurnitureRepository";
 import { createDatabase } from "../database/sqlite";
 
 export class SQLiteFurnitureRepository implements FurnitureRepository {
+  
   async getAll(): Promise<Furniture[]> {
     const db = await createDatabase();
 
