@@ -29,6 +29,11 @@ export class FurnitureService {
     return this.getFurniture.execute();
   }
 
+  async getById(id: number) {
+    return this.repository.getById(id);
+  }
+
+
   async update(furniture: Furniture) {
     return this.updateFurniture.execute(furniture);
   }

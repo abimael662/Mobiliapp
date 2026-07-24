@@ -1,0 +1,106 @@
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\values\styles.xml:11: Error: android:windowActionModeOverlay has already been defined in this <style> [DuplicateDefinition]
+        <item name="android:windowActionModeOverlay">true</item>
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\values\styles.xml:7: Previously defined here
+
+   Explanation for issues of type "DuplicateDefinition":
+   You can define a resource multiple times in different resource folders;
+   that's how string translations are done, for example. However, defining the
+   same resource more than once in the same resource folder is likely an
+   error, for example attempting to add a new resource without realizing that
+   the name is already used, and so on.
+
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\build.gradle:14: Warning: A newer version of com.android.tools.build:gradle than 8.13.0 is available: 9.3.1. (There is also a newer version of 8.13.𝑥 available, if upgrading to 9.3.1 is difficult: 8.13.2) [AndroidGradlePluginVersion]
+        classpath 'com.android.tools.build:gradle:8.13.0'
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "AndroidGradlePluginVersion":
+   This detector looks for usage of the Android Gradle Plugin where the
+   version you are using is not the current stable release. Using older
+   versions is fine, and there are cases where you deliberately want to stick
+   with an older version. However, you may simply not be aware that a more
+   recent version is available, and that is what this lint check helps find.
+
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\build.gradle:59: Warning: A newer version of androidx.camera:camera-core than 1.4.2 is available: 1.6.1 [GradleDependency]
+    implementation "androidx.camera:camera-core:1.4.2"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\build.gradle:60: Warning: A newer version of androidx.camera:camera-camera2 than 1.4.2 is available: 1.6.1 [GradleDependency]
+    implementation "androidx.camera:camera-camera2:1.4.2"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\build.gradle:61: Warning: A newer version of androidx.camera:camera-lifecycle than 1.4.2 is available: 1.6.1 [GradleDependency]
+    implementation "androidx.camera:camera-lifecycle:1.4.2"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\build.gradle:62: Warning: A newer version of androidx.camera:camera-view than 1.4.2 is available: 1.6.1 [GradleDependency]
+    implementation "androidx.camera:camera-view:1.4.2"
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:3: Warning: This <FrameLayout> can be replaced with a <merge> tag [MergeRootFrame]
+<FrameLayout
+^
+
+   Explanation for issues of type "MergeRootFrame":
+   If a <FrameLayout> is the root of a layout and does not provide background
+   or padding etc, it can often be replaced with a <merge> tag which is
+   slightly more efficient. Note that this depends on context, so make sure
+   you understand how the <merge> tag works before proceeding.
+
+   https://android-developers.googleblog.com/2009/03/android-layout-tricks-3-optimize-by.html
+
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:73: Warning: Missing contentDescription attribute on image [ContentDescription]
+<ImageButton
+ ~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:81: Warning: Missing contentDescription attribute on image [ContentDescription]
+<ImageButton
+ ~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:89: Warning: Missing contentDescription attribute on image [ContentDescription]
+<ImageButton
+ ~~~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:29: Warning: Hardcoded string "Escanear QR", should use @string resource [HardcodedText]
+android:text="Escanear QR"
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\abima\Mobiliapp\mobiliapp-barcode-scanner\android\src\main\res\layout\activity_scanner.xml:43: Warning: Hardcoded string "Escanear el Codigo QR de un Mobiliario o Sala", should use @string resource [HardcodedText]
+android:text="Escanear el Codigo QR de un Mobiliario o Sala"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "HardcodedText":
+   Hardcoding text attributes directly in layout files is bad for several
+   reasons:
+
+   * When creating configuration variations (for example for landscape or
+   portrait) you have to repeat the actual text (and keep it up to date when
+   making changes)
+
+   * The application cannot be translated to other languages by just adding
+   new translations for existing string resources.
+
+   There are quickfixes to automatically extract this hardcoded string into a
+   resource lookup.
+
+1 error, 11 warnings

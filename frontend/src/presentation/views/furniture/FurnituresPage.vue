@@ -31,7 +31,7 @@
 
       <CardInfo v-for="furniture in furnitures" :key="furniture.id_mobiliario"
         imagen="https://docs-demo.ionic.io/assets/madison.jpg" :titulo="furniture.nombre_mobiliario"
-        :descripcion="furniture.descripcion" :indicador="furniture.estado" :sala="furniture.ubicacion"
+        :descripcion="furniture.descripcion" :indicador="Number(furniture.estado) === 1 ? 'Activo' : 'Inactivo'" :sala="furniture.ubicacion"
         :enlace="`/furniture/${furniture.id_mobiliario}`" />
 
       <ion-fab slot="fixed" vertical="bottom" horizontal="end">
@@ -74,11 +74,8 @@ const furnitures = ref<Furniture[]>([]);
 
 
 const loadFurniture = async () => {
-
   furnitures.value = await furnitureService.getAll();
-
 };
-
 
 onIonViewWillEnter(() => {
   loadFurniture();

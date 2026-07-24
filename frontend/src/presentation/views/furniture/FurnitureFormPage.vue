@@ -14,7 +14,7 @@
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="12">
-            <h4 class=".sub-tiulos">Foto</h4>
+            <ion-label class="sub-tiulos">Foto</ion-label>
           </ion-col>
           <ion-col size="6">
             <ion-card>
@@ -36,13 +36,37 @@
 
       <card-input apartado="Nombre del mobiliario" tipo="text" v-model:dato="nombre" />
 
-      <card-input apartado="Categoria" tipo="text" v-model:dato="categoria" />
+      <CardSelect apartado="Categoría" v-model:dato="categoria" :opciones="[
+        'Escritorio',
+        'Silla',
+        'Mesa',
+        'Archivero',
+        'Estantería',
+        'Gabinete',
+        'Armario',
+        'Sofá',
+        'Pizarrón',
+        'Otro'
+      ]" placeholder="Seleccione categoría" />
 
       <card-input apartado="Ubicacion" tipo="text" v-model:dato="ubicacion" />
 
-      <card-input apartado="Estado" tipo="text" v-model:dato="estado" />
+      <ion-item lines="none">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-label class="sub-tiulos" >Estado</ion-label>
+            </ion-col>
 
-      <card-input apartado="Fedcha de Compra" tipo="date" v-model:dato="fechaCompra" />
+            <ion-col size="6" class="ion-justify-content-center ion-text-end ion-align-items-center ion-display-flex">
+              <ion-toggle v-model="estado" :enable-on-off-labels="true" />
+            </ion-col>
+
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <card-input apartado="Fecha de Compra" tipo="date" v-model:dato="fechaCompra" />
 
       <card-input apartado="Descripcion" tipo="text" v-model:dato="descripcion" />
 
@@ -72,12 +96,23 @@
 import {
   IonPage,
   IonContent,
-  IonButtons,
-  IonBackButton,
-  IonToast
-} from '@ionic/vue';
-import { cameraOutline } from 'ionicons/icons';
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonImg,
+  IonIcon
+} from "@ionic/vue";
+
 import CardInput from "@/presentation/components/widget/CardInput.vue";
+import CardSelect from "@/presentation/components/widget/CardSelect.vue";
+
+import { cameraOutline } from 'ionicons/icons';
 import { useRoute, useRouter } from "vue-router";
 import { ref } from "vue";
 import type { Furniture } from "@/domain/entities/Furniture";
@@ -89,7 +124,7 @@ const route = useRoute();
 const nombre = ref("");
 const categoria = ref("");
 const ubicacion = ref("");
-const estado = ref("");
+const estado = ref(true);
 const fechaCompra = ref("");
 const descripcion = ref("");
 const showToast = ref(false);
@@ -105,8 +140,8 @@ const guardar = async () => {
       nombre_mobiliario: nombre.value,
       categoria: categoria.value,
       ubicacion: ubicacion.value,
-      estado: estado.value,
-      fechaCompra: new Date(fechaCompra.value),
+      estado: estado.value ? 1 : 0,
+      fecha_compra: fechaCompra.value,
       descripcion: descripcion.value
     };
     await furnitureService.create(furniture);

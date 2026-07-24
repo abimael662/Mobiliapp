@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.13.0" type="incidents">
+
+    <incident
+        id="DuplicateDefinition"
+        severity="error"
+        message="`android:windowActionModeOverlay` has already been defined in this `&lt;style>`">
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="11"
+            column="15"
+            startOffset="271"
+            endLine="11"
+            endColumn="53"
+            endOffset="309"/>
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/values/styles.xml"
+            line="7"
+            column="9"
+            startOffset="139"
+            endLine="7"
+            endColumn="65"
+            endOffset="195"
+            message="Previously defined here"/>
+    </incident>
+
+    <incident
+        id="AndroidGradlePluginVersion"
+        severity="warning"
+        message="A newer version of com.android.tools.build:gradle than 8.13.0 is available: 9.3.1. (There is also a newer version of 8.13.𝑥 available, if upgrading to 9.3.1 is difficult: 8.13.2)">
+        <fix-alternatives>
+            <fix-replace
+                description="Replace with 8.13.2"
+                family="Update versions"
+                robot="true"
+                independent="true"
+                oldString="8.13.0"
+                replacement="8.13.2"
+                priority="0"/>
+            <fix-replace
+                description="Replace with 9.3.1"
+                family="Update versions"
+                oldString="8.13.0"
+                replacement="9.3.1"
+                priority="0"/>
+        </fix-alternatives>
+        <location
+            file="${:*projectDir}/build.gradle"
+            line="14"
+            column="19"
+            startOffset="615"
+            endLine="14"
+            endColumn="58"
+            endOffset="654"/>
+        <map>
+            <entry
+                name="coordinate"
+                string="com.android.application"/>
+            <entry
+                name="revision"
+                string="9.3.1"/>
+        </map>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.camera:camera-core than 1.4.2 is available: 1.6.1">
+        <fix-replace
+            description="Change to 1.6.1"
+            family="Update versions"
+            oldString="1.4.2"
+            replacement="1.6.1"
+            priority="0"/>
+        <location
+            file="${:*projectDir}/build.gradle"
+            line="59"
+            column="20"
+            startOffset="2087"
+            endLine="59"
+            endColumn="55"
+            endOffset="2122"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.camera:camera-camera2 than 1.4.2 is available: 1.6.1">
+        <fix-replace
+            description="Change to 1.6.1"
+            family="Update versions"
+            oldString="1.4.2"
+            replacement="1.6.1"
+            priority="0"/>
+        <location
+            file="${:*projectDir}/build.gradle"
+            line="60"
+            column="20"
+            startOffset="2142"
+            endLine="60"
+            endColumn="58"
+            endOffset="2180"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.camera:camera-lifecycle than 1.4.2 is available: 1.6.1">
+        <fix-replace
+            description="Change to 1.6.1"
+            family="Update versions"
+            oldString="1.4.2"
+            replacement="1.6.1"
+            priority="0"/>
+        <location
+            file="${:*projectDir}/build.gradle"
+            line="61"
+            column="20"
+            startOffset="2200"
+            endLine="61"
+            endColumn="60"
+            endOffset="2240"/>
+    </incident>
+
+    <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.camera:camera-view than 1.4.2 is available: 1.6.1">
+        <fix-replace
+            description="Change to 1.6.1"
+            family="Update versions"
+            oldString="1.4.2"
+            replacement="1.6.1"
+            priority="0"/>
+        <location
+            file="${:*projectDir}/build.gradle"
+            line="62"
+            column="20"
+            startOffset="2260"
+            endLine="62"
+            endColumn="55"
+            endOffset="2295"/>
+    </incident>
+
+    <incident
+        id="MergeRootFrame"
+        severity="warning"
+        message="This `&lt;FrameLayout>` can be replaced with a `&lt;merge>` tag">
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="3"
+            column="1"
+            startOffset="42"
+            endLine="100"
+            endColumn="15"
+            endOffset="2138"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="73"
+            column="2"
+            startOffset="1477"
+            endLine="73"
+            endColumn="13"
+            endOffset="1488"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="81"
+            column="2"
+            startOffset="1681"
+            endLine="81"
+            endColumn="13"
+            endOffset="1692"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                point="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="89"
+            column="2"
+            startOffset="1888"
+            endLine="89"
+            endColumn="13"
+            endOffset="1899"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Escanear QR&quot;, should use `@string` resource">
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="29"
+            column="1"
+            startOffset="660"
+            endLine="29"
+            endColumn="27"
+            endOffset="686"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Escanear el Codigo QR de un Mobiliario o Sala&quot;, should use `@string` resource">
+        <location
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_scanner.xml"
+            line="43"
+            column="1"
+            startOffset="883"
+            endLine="43"
+            endColumn="61"
+            endOffset="943"/>
+    </incident>
+
+</incidents>

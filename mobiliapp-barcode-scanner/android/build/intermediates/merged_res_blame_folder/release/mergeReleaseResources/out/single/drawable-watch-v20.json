@@ -1,0 +1,6 @@
+[
+    {
+        "merged": "com.mobiliapp.plugins.barcodescanner-release-35:/drawable-watch-v20/abc_dialog_material_background.xml",
+        "source": "com.mobiliapp.plugins.barcodescanner-appcompat-1.7.1-17:/drawable-watch-v20/abc_dialog_material_background.xml"
+    }
+]

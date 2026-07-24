@@ -1,0 +1,11 @@
+R_DEF: Internal format may change without notice
+local
+drawable scanner_frame
+drawable scanner_overlay
+id btnClose
+id btnFlash
+id btnGallery
+id cameraPreview
+id scannerFrame
+layout activity_scanner
+style AppTheme

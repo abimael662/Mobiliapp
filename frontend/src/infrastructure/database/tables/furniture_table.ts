@@ -6,8 +6,8 @@ CREATE TABLE IF NOT EXISTS mobiliario (
     nombre_mobiliario TEXT NOT NULL,
     categoria TEXT NOT NULL,
     ubicacion TEXT NOT NULL,
-    estado TEXT NOT NULL,
-    fecha_compra DATETIME,
+    estado INTEGER NOT NULL DEFAULT 1,
+    fecha_compra TEXT,
     descripcion TEXT,
     created_at TEXT DEFAULT CURRENT_TIMESTAMP,
     updated_at TEXT DEFAULT CURRENT_TIMESTAMP

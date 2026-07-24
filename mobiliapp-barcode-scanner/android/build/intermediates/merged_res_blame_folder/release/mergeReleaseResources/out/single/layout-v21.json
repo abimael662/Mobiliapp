@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.mobiliapp.plugins.barcodescanner-release-35:/layout-v21/notification_action.xml",
+        "source": "com.mobiliapp.plugins.barcodescanner-core-1.17.0-30:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "com.mobiliapp.plugins.barcodescanner-release-35:/layout-v21/notification_template_icon_group.xml",
+        "source": "com.mobiliapp.plugins.barcodescanner-core-1.17.0-30:/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "com.mobiliapp.plugins.barcodescanner-release-35:/layout-v21/notification_template_custom_big.xml",
+        "source": "com.mobiliapp.plugins.barcodescanner-core-1.17.0-30:/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "com.mobiliapp.plugins.barcodescanner-release-35:/layout-v21/notification_action_tombstone.xml",
+        "source": "com.mobiliapp.plugins.barcodescanner-core-1.17.0-30:/layout-v21/notification_action_tombstone.xml"
+    }
+]

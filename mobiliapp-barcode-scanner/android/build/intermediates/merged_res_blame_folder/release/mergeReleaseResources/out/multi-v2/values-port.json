@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.mobiliapp.plugins.barcodescanner-release-35:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\abima\\.gradle\\caches\\8.14.3\\transforms\\95ed4eb50903d0505f50cc9711d127d5\\transformed\\appcompat-1.7.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.mobiliapp.plugins.barcodescanner-mergeReleaseResources-33:/values-port/values-port.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\abima\\.gradle\\caches\\8.14.3\\transforms\\95ed4eb50903d0505f50cc9711d127d5\\transformed\\appcompat-1.7.1\\res\\values-port\\values-port.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "55",
+                        "endOffsets": "106"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -41,7 +41,7 @@ export class SQLiteFurnitureRepository implements FurnitureRepository {
         furniture.categoria,
         furniture.ubicacion,
         furniture.estado,
-        furniture.fechaCompra,
+        furniture.fecha_compra,
         furniture.descripcion,
       ],
     );
@@ -58,16 +58,15 @@ export class SQLiteFurnitureRepository implements FurnitureRepository {
       estado=?,
       fecha_compra=?,
       descripcion=?,
-      codigo_qr=?
+      updated_at=CURRENT_TIMESTAMP
       WHERE id_mobiliario=?`,
       [
         furniture.nombre_mobiliario,
         furniture.categoria,
         furniture.ubicacion,
         furniture.estado,
-        furniture.fechaCompra,
+        furniture.fecha_compra,
         furniture.descripcion,
-        furniture.codigoQr,
         furniture.id_mobiliario,
       ],
     );

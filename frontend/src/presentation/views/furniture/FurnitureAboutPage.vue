@@ -24,7 +24,7 @@
 
 
       <h1 class="name-product">
-        Nombre del Producto
+        {{ furniture?.nombre_mobiliario }}
       </h1>
 
 
@@ -36,7 +36,7 @@
 
           <ion-col size="6" class="ion-text-end">
             <ion-button disabled>
-              Estado: Activo
+              {{ furniture?.estado === 1 ? "Activo" : "Inactivo" }}
             </ion-button>
           </ion-col>
         </ion-row>
@@ -54,7 +54,7 @@
             <p>Categoría</p>
           </ion-col>
           <ion-col size="6" class="ion-text-end">
-            <p>Sala</p>
+            <p>{{ furniture?.categoria }}</p>
           </ion-col>
 
 
@@ -62,7 +62,7 @@
             <p>Ubicación</p>
           </ion-col>
           <ion-col size="6" class="ion-text-end">
-            <p>Sala Principal</p>
+            <p>{{ furniture?.ubicacion }}</p>
           </ion-col>
 
 
@@ -70,7 +70,7 @@
             <p>Estado</p>
           </ion-col>
           <ion-col size="6" class="ion-text-end">
-            <p>Activo</p>
+            <p>{{ furniture?.estado === 1 ? "Activo" : "Inactivo" }}</p>
           </ion-col>
 
 
@@ -78,7 +78,7 @@
             <p>Fecha Compra</p>
           </ion-col>
           <ion-col size="6" class="ion-text-end">
-            <p>22/07/2026</p>
+            <p>{{ formatFecha(furniture?.fecha_compra ?? "") }}</p>
           </ion-col>
 
 
@@ -88,8 +88,7 @@
 
           <ion-col size="12">
             <ion-text>
-              Producto creado para la sala principal, cuenta con un diseño
-              moderno y materiales resistentes.
+              {{ furniture?.descripcion ?? "Sin descripción" }}
             </ion-text>
           </ion-col>
 
@@ -106,7 +105,7 @@
           </ion-col>
 
           <ion-col size="6" class="ion-text-end">
-            <ion-button expand="block" fill="solid" >
+            <ion-button expand="block" fill="solid" @click="deleteFurniture">
               Eliminar
             </ion-button>
           </ion-col>
@@ -119,9 +118,46 @@
 
 <script setup lang="ts">
 import { IonPage, IonContent, IonButton, IonButtons, IonBackButton } from '@ionic/vue';
-import { useRoute } from "vue-router";
+import { useRoute, useRouter  } from "vue-router";
+import { ref } from "vue";
+import { onIonViewWillEnter } from "@ionic/vue";
+
+import type { Furniture } from "@/domain/entities/Furniture";
+import { furnitureService } from "@/infrastructure/container/dependencies";
 
 const route = useRoute();
+const router = useRouter();
+const id = Number(route.params.id);
+const furniture = ref<Furniture | null>(null);
 
-const id = route.params.id;
+const loadFurniture = async () => {
+  furniture.value = await furnitureService.getById(id);
+};
+
+
+const deleteFurniture = async () => {
+  try {
+    await furnitureService.delete(id);
+    router.back();
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const formatFecha = (fecha: string) => {
+  if (!fecha) return "";
+
+  const date = new Date(fecha);
+
+  return date.toLocaleDateString("es-MX", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric"
+  });
+};
+
+onIonViewWillEnter(() => {
+  loadFurniture();
+});
+
 </script>

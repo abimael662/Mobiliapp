@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 8.13.0" type="partial_results">
+    <map id="UnusedResources">
+        <location id="R.drawable.scanner_overlay"
+            file="${:*debug*MAIN*sourceProvider*0*resDir*0}/drawable/scanner_overlay.xml"
+            line="3"
+            column="1"
+            startOffset="42"
+            endLine="37"
+            endColumn="14"
+            endOffset="724"/>
+        <entry
+            name="model"
+            string="drawable[scanner_frame(U),scanner_overlay(D)],id[cameraPreview(U),scannerFrame(D),btnFlash(U),btnGallery(U),btnClose(U)],layout[activity_scanner(U)],style[AppTheme(U),Theme_AppCompat_Light_NoActionBar(R)];7^0,8^9;;;"/>
+    </map>
+
+</incidents>

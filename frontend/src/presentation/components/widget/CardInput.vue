@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row>
         <ion-col size="12">
-          <ion-label>{{ apartado }}</ion-label>
+          <ion-label class="sub-tiulos">{{ apartado }}</ion-label>
         </ion-col>
 
         <ion-col size="12">

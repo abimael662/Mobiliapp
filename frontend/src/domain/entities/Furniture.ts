@@ -5,8 +5,7 @@ export interface Furniture {
   nombre_mobiliario: string;
   categoria: string;
   ubicacion: string;
-  estado: string;
-  fechaCompra: Date;
+  estado: number;
+  fecha_compra: string;
   descripcion?: string;
-  codigoQr?: string;
 }
