@@ -38,5 +38,4 @@ import {
   IonIcon 
 } from '@ionic/vue';
   import { add } from 'ionicons/icons';
->>>>>>> feature/pages
 </script>

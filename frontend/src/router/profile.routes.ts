@@ -6,6 +6,10 @@ export const profileRoutes: RouteRecordRaw[] = [
     component: () => import('@/presentation/views/profile/ProfilePage.vue'),
   },
   {
+    path: 'scan',
+    component: () => import('@/presentation/views/scan/ScannerPage.vue'),
+  },
+  {
     path: 'profile/about',
     component: () => import('@/presentation/views/profile/AboutPage.vue'),
   },

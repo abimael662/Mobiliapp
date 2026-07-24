@@ -14,5 +14,9 @@
 	{
 		"pkg": "@capacitor/status-bar",
 		"classpath": "com.capacitorjs.plugins.statusbar.StatusBarPlugin"
+	},
+	{
+		"pkg": "mobiliapp-barcode-scanner",
+		"classpath": "com.mobiliapp.plugins.barcodescanner.BarcodeScannerPlugin"
 	}
 ]
